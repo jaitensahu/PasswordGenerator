@@ -1,9 +1,270 @@
-.inputCheckbox{
-    display: flex;
-}
-.inputLength{
+
+.inputLength {
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
 }
+
+.showPass {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+.showPass p {
+    /* display: flex; */
+    width: 90%;
+    /* height: 30px; */
+    padding: 7px 5px;
+    border: 1px solid white;
+    /* background-color: rgb(199, 198, 198); */
+}
+
+.showPass i {
+    font-size: 26px;
+    margin-left: 10px;
+}
+
+.inputLength {
+    margin: 20px 0;
+}
+.inputLength p{
+    font-size: 18px;
+    color: white;
+    text-shadow: 0 0 10px #07FEAE;
+    font-weight: bold;
+}
+
+.inputLength input {
+    padding: 5px 0;
+    width: 50px;
+    border: 2px solid #00ff99;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 16px;
+}
+.checkboxs{
+    text-align: start;
+}
+.inputCheckbox{
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.checkboxs .inputCheckbox{
+    margin: 5px 0;
+}
+button{
+    background-color: #00ff99;
+    font-size: 18px;
+    /* color: white; */
+}
+.icon-conatiner {
+    /* width: 40px; */
+    /* height: 40px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: #fff; */
+    /* border-radius: 15px; */
+    /* box-shadow: 20px 20px 15px 0 #ababab4d; */
+    cursor: pointer;
+  }
+  
+  .icon-conatiner svg {
+    width: 40px;
+    height: auto;
+  }
+  
+  .icon-conatiner svg:last-child {
+    position: absolute;
+  }
+  
+  .icon-conatiner:active {
+    animation: press 0.2s 1 linear;
+  }
+  
+  .icon-conatiner:active svg:last-child {
+    animation: bounce 0.2s 1 linear;
+  }
+  
+  .text {
+    color: #666;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    user-select: none;
+  }
+  .error{
+    margin: 10px 0;
+    height: 30px;
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    font-size: 22px;
+    text-shadow: 5px 0 10px rgb(255, 254, 254);
+  }
+  
+  @keyframes press {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(0.92);
+    }
+  
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes bounce {
+    50% {
+      transform: rotate(5deg) translate(20px, -50px);
+    }
+  
+    to {
+      transform: scale(0.9) rotate(10deg) translate(50px, -80px);
+      opacity: 0;
+    }
+  }
+  .containerr {
+    cursor: pointer;
+  }
+  
+  .containerr input {
+    display: none;
+  }
+  
+  .containerr svg {
+    overflow: visible;
+  }
+  
+  .path {
+    fill: none;
+    stroke: white;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+    stroke-dasharray: 241 9999999;
+    stroke-dashoffset: 0;
+  }
+  
+  .containerr input:checked ~ svg .path {
+    stroke-dasharray: 70.5096664428711 9999999;
+    stroke-dashoffset: -262.2723388671875;
+  }
+  
+  button,button::after {
+    padding: 10px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    background-color: transparent;
+    position: relative;
+    background-color: #00ff99;
+    cursor: pointer;
+  }
+  
+  button::after {
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 15% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: 'GLITCH';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+  }
+  
+  button:hover::after {
+    animation: glitch_4011 1s;
+    text-shadow: 10 10px 10px black;
+    animation-timing-function: steps(2, end);
+    text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8;
+    background-color: transparent;
+    border: 3px solid rgb(0, 255, 213);
+  }
+  
+  button:hover {
+    text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
+  }
+  
+  button:hover {
+    background-color: #000000;
+    color: white;
+    border: 1px solid rgb(0, 255, 213);
+    box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
+  }
+  
+  @keyframes glitch_4011 {
+    0% {
+      clip-path: var(--move1);
+      transform: translate(0px,-10px);
+    }
+  
+    10% {
+      clip-path: var(--move2);
+      transform: translate(-10px,10px);
+    }
+  
+    20% {
+      clip-path: var(--move3);
+      transform: translate(10px,0px);
+    }
+  
+    30% {
+      clip-path: var(--move4);
+      transform: translate(-10px,10px);
+    }
+  
+    40% {
+      clip-path: var(--move5);
+      transform: translate(10px,-10px);
+    }
+  
+    50% {
+      clip-path: var(--move6);
+      transform: translate(-10px,10px);
+    }
+  
+    60% {
+      clip-path: var(--move1);
+      transform: translate(10px,-10px);
+    }
+  
+    70% {
+      clip-path: var(--move3);
+      transform: translate(-10px,10px);
+    }
+  
+    80% {
+      clip-path: var(--move2);
+      transform: translate(10px,-10px);
+    }
+  
+    90% {
+      clip-path: var(--move4);
+      transform: translate(-10px,10px);
+    }
+  
+    100% {
+      clip-path: var(--move1);
+      transform: translate(0);
+    }
+  }
+  
+  

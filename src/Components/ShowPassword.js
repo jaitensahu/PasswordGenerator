@@ -1,6 +1,6 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./Showpassword.css";
-
+let i=0;
 const Input = (props) => {
 
   const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""); // Uppercase letters (A-Z)
@@ -28,18 +28,20 @@ const Input = (props) => {
 
 
 let lengthOfArray=arrayOfcharCollection.length;
-  let str = "";
+  let newStr = "";
+  let [str, setStr]=useState("")
   for (let i = 0; i < props.length; i++) {
     let idx = Math.floor(Math.random() * lengthOfArray);
     let lengthhh = arrayOfcharCollection[idx].length;
     let idx2 = Math.floor(Math.random() * lengthhh);
-    str = str + arrayOfcharCollection[idx][idx2];
+    newStr = newStr + arrayOfcharCollection[idx][idx2];
   }
 
+//   setStr(newStr)
 
   function copyPass() {
     navigator.clipboard
-      .writeText(str)
+      .writeText(newStr)
       .then(() => {
         alert("Data copied");
       })
@@ -49,7 +51,7 @@ let lengthOfArray=arrayOfcharCollection.length;
   }
   return (
     <div className="showPass">
-      <p>{str}</p>
+      <p>{newStr}</p>
       <i className="fa-solid fa-copy" onClick={copyPass}></i>
     </div>
   );
